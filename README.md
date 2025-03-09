@@ -15,8 +15,7 @@ Today my friend, marks the day I am officially attempting to create this project
 2) https://www.geeksforgeeks.org/creating-a-dynamic-array-in-java/
 3) https://www.geeksforgeeks.org/split-string-java-examples/
 4) https://www.geeksforgeeks.org/creating-a-dynamic-array-in-java/
-5) https://www.youtube.com/watch?v=RGOj5yH7evk&t=2356s
-
+5) https://www.youtube.com/watch?v=RGOj5yH7evk&t=2356
 
 Today I'm going to try to finish the array implementation of my project as well as the reading in of my textfile into a database, but I'm going to test all of this on a smaller test textfile so that I don't waste too much of my computers memory for no good reason. I want  I want my java program to read in the file and populate the tab spaced values of each line into three distinct categories in a database (term, sentence, confidence score) as one class.T hen I need to create two separate java apps one which sorts the text file values by means of an array of fixed or variable size and the other which sorts it by means of a binary search tree.
 
@@ -25,6 +24,8 @@ Today I'm going to try to finish the array implementation of my project as well 
 **Resources used:** 
 1) Amathuba binary search tree algorithms
 2) https://www.w3schools.com/java/java_switch.asp
+3) https://www.youtube.com/watch?v=6nY2yDRwjxY
+
 
 
 So I didn't do as much as I wanted to do yesterday, just finished the reading of the file into an arraylist of arrays with [term, sentence, confidence score] but hopefully I can finish both my array implementation and binary search tree functionality today so that I can spend the week working on my GUI and documentation since I'd prefer if my program wasn't text-based. But For now i want to keep the implemntation text-based. 

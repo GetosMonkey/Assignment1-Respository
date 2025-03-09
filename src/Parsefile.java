@@ -1,9 +1,7 @@
-package src;
-
 // Maryam Abrahams
 // ABRMAR043
 // 5th March 2025
-
+package src;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -78,17 +76,15 @@ public class Parsefile {
         return database;
     }
 
-    public static void main(String[] args){ 
-         
-        Parsefile db = new Parsefile("/home/abrmar043/Assignment 1 - Project/textfiles/Testfile.txt"); 
-        //__________________________
-            
-            // Checking with print 
+    
+    public static void main(String[] args){
 
+        /* Parsefile db = new Parsefile("/home/abrmar043/Assignment 1 - Project/textfiles/Testfile.txt"); 
+        
                 for (String[] x : db.getDatabase()){ 
                     System.out.println(x[0]+ "\t" +x[1]+"\t"+x[2]); 
-                }
-        //__________________________
+                }*/
+        
     }
     }
 
