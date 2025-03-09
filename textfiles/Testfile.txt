@@ -1,0 +1,73 @@
+motility	Motility is an action	1.0
+conglomerate	Conglomerates are corporations.	1.0
+hypha	Hyphae allow the pathogen to infect and grow within plant cells to obtain food.	0.8458955883979797
+creation	Creations contribute to development.	1.0
+bed bug	Bed bugs are parasites that feed on the blood of certain animals and people.	0.8385290503501892
+granddaughter	Granddaughters have (part) human bodies.	1.0
+lactobacillus	Lactobacillus is simply dried bacteria that occur naturally in unpasteurized whole milk.	0.8001087307929993
+cilium	Cilia possess the protein motor dynein responsible for their movement and the mucociliary escalator.	0.792549729347229
+bruiser	Bruisers have (part) plasma membranes.	1.0
+attribute	Attributes have effects.	1.0
+gaseous oxygen	Gaseous oxygen is odorless and free from contaminants.	0.8101040720939636
+household	Households experience growth.	1.0
+shopping bag	Shopping bags are located in shops.	1.0
+brewpub	Brewpubs are breweries.	1.0
+insecurity	Insecurities are anxiety.	1.0
+word	Words are capable of means.	1.0
+respiratory infection	Respiratory infection is infection	1.0
+root hair	Root hairs are the smallest type of roots complete with a functional stele.	0.7781090140342712
+smallmouth bass	Smallmouth bass are omnivorous in the food items that they consume.	0.7980403304100037
+absorber	An absorber is absorbent	1.0
+childhood	Childhood has effects.	1.0
+formic acid	Formic acid is carboxylic acid.	1.0
+native plant	Native plants attract native pollinators.	1.0
+strychnine	Strychnine is used as a pesticide.	0.8012645840644836
+chemical factory	Chemical factories perform follow functions.	1.0
+black rhinoceros	Black rhinoceroses occupy areas.	1.0
+aphid	Aphids come in many colours such as green, yellow, brown, pink or black.	0.7256956696510315
+square	Squares are hand tools.	1.0
+byzant	A byzant is coin	1.0
+weight	Weight is a force that is always directed toward the center of the earth.	0.7081723213195801
+wryneck	A wryneck is a woodpecker	1.0
+coati	Coatis have (part) chest cavities.	1.0
+marijuana smoker	Marijuana smokers develop problems.	1.0
+raisin	Raisins are dried food.	1.0
+incineration	Incineration is a burning	1.0
+county	Counties possess birds.	1.0
+duke	Dukes have (part) plasma membranes.	1.0
+alignment	Alignment is positioning.	1.0
+firm	Firms provide expertise.	1.0
+victory	Victory isa occurrence.	1.0
+gasoline	Gasoline contains aromatic hydrocarbons.	1.0
+grooming	Grooming cause injuries.	1.0
+terrestrial isopod	Terrestrial isopods are crustaceans that have adapted to living life on land.	0.8390132784843445
+other vegetarian animal	Other vegetarian animals possess teeth.	1.0
+chef	Chefs are fictional characters.	1.0
+body builder	Body builders will have different requirements.	1.0
+centriole	Centrioles can interconvert into basal bodies and are used for templating and assembly of flagella.	0.7610583901405334
+multicellular algae	Multicellular algae are algae that have more than one cell in their makeup.	0.8335815668106079
+Dronabinol	Dronabinol is the same chemically as one of the active chemicals in marijuana.	0.7961849570274353
+hog	Hogs inhabit habitats.	1.0
+spatial ability	Spatial abilities are abilities that a person is born with in the task of visualization.	0.7069687247276306
+electric field	Electric fields create heat.	1.0
+finch	Finches invade gardens.	1.0
+school bus	School buses are buses.	1.0
+grasshopper	Grasshoppers live in grassy areas and in fields.	0.7610329985618591
+penicillamine	Penicillamines are drugs.	1.0
+balanced diet	A balanced diet is a diet	1.0
+jumper	Jumpers have (part) cuffs.	1.0
+american elm tree	American elm trees produce tiny flowers.	1.0
+blue king crab	Blue king crabs compete for resources.	1.0
+anadromous fish	Anadromous fish are unique in that they live in both fresh and salt water.	0.7473280429840088
+oxide	Oxides are mostly of iron .	0.7615893483161926
+guideline	Guidelines suggest aspects.	1.0
+walk	Walks are paths.	1.0
+scout	Scouts are experts.	1.0
+freezing rain	Freezing rain is liquid rain that freezes to a surface such as the road or a tree.	0.7669075131416321
+battery	Batteries supply electrical power.	1.0
+acanthus	An acanthus is a herb	1.0
+reproductive technology	Reproductive technology plays roles.	1.0
+visual hallucination	Visual hallucination is hallucination.	1.0
+rhinoceros horn	Rhinoceros horns are made of keratin.	0.8226467370986938
+coffee bean	Coffee beans are seeds.	1.0
+electrolyte	Electrolytes are positively or negatively charged elements necessary for muscle function.	0.8464978337287903
