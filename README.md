@@ -1,4 +1,4 @@
-# Assignment1-Respository
+# Assignment1-Repository
 
 ## CSC2001F 2025 Data Structures Assignment 1
 

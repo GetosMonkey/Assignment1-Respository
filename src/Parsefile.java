@@ -1,3 +1,9 @@
+package src;
+
+// Maryam Abrahams
+// ABRMAR043
+// 5th March 2025
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
