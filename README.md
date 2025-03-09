@@ -28,4 +28,7 @@ Today I'm going to try to finish the array implementation of my project as well 
 
 
 
-So I didn't do as much as I wanted to do yesterday, just finished the reading of the file into an arraylist of arrays with [term, sentence, confidence score] but hopefully I can finish both my array implementation and binary search tree functionality today so that I can spend the week working on my GUI and documentation since I'd prefer if my program wasn't text-based. But For now i want to keep the implemntation text-based. 
+So I didn't do as much as I wanted to do yesterday, just finished the reading of the file into an arraylist of arrays with [term, sentence, confidence score] but hopefully I can finish both my array implementation and binary search tree functionality today so that I can spend the week working on my GUI and documentation since I'd prefer if my program wasn't text-based. But For now i want to keep the implementation text-based. 
+
+Okay I only finished the array-based implementation partially due to a wholely necessary shopping break, but majority of the functionality is facsimile of the BST-based implementation anyways so hopefully that should go faster and bby Tuesday I can ask for help with my GUI in the labs session.
+
