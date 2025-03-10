@@ -28,21 +28,55 @@ public class GenericsKbBSTApp{
         }
     }
 
-    // 2) Adding a Statement to the knowledge base 
+
+    // 2) Update a Statement in the knowledge base 
+
+    public void updateTerm(String key, String sentence, String cs){
+
+        double CS = Double.parseDouble(cs); 
+
+        if (tree == null){
+            System.out.println("Please first load a knowledge base. \n");
+            return;
+        }
+        
+        Node tuple = tree.searchByKey(key); 
+
+        if ( tuple == null){
+            System.out.println("The term was not found within the database. "); 
+                //Combining add and update: 
+                System.out.println("Would you like to add the new information to the knowledge base? [y or \\n]: ");
+                    Scanner scan = new Scanner(System.in); 
+                    if (scan.nextLine().equals("y")){
+                        tree.insert(key, sentence, CS);
+                    } else if (scan.nextLine().equals("n")){
+                        scan.close(); 
+                        return; 
+                    } else { System.out.print("Please enter either 'y' or 'n': ");}
+                    scan.close();
+            return;
+        }else{ 
+            System.out.println("The term was found within the database. ");
+            tree.insert(key, sentence, CS);
+        }
+        
+    }
 
 
-    // 3) Update a Statement in the knowledge base 
+    // 3) Search for a statement by term 
 
-    public void searchTerm(String key, String sentence, String cs){
+    public void searchByTerm(String term){
+
+        
 
     }
 
 
-    // 4) Search for a statement by term 
+    // 4) Search for a statement by term and sentence
+    
+    public void termAndSentence(String term, String sentence){
 
-
-    // 5) Search for a statement by term and sentence
-
+    }
 
     public static void main(String[] args){
     
@@ -52,17 +86,16 @@ public class GenericsKbBSTApp{
                 Scanner sc = new Scanner(System.in);
                 GenericsKbBSTApp gkbbst = new GenericsKbBSTApp(); 
     
-            while (choice != 6) {
+            while (choice != 5) {
                 
                 //updates if the confidence score is higher than an existing one 
                 System.out.println("""
                         Choose an action from the menu:
                         1. Load a knowledge base from a file
-                        2. Add a statement to the knowledge base
-                        3. Update a staement in the knowledge base 
-                        4. Search for a statement in the knowledge base by term
-                        5. Search for a statement in the knowledge base by term and sentence
-                        6. Quit
+                        2. Add or update a statement to\\in the knowledge base
+                        3. Search for a statement in the knowledge base by term
+                        4. Search for a statement in the knowledge base by term and sentence
+                        5. Quit
     
                         Enter your choice: 
                         """);
@@ -82,21 +115,8 @@ public class GenericsKbBSTApp{
 
                         break;
 
-                    case 2:
+                    case 2: 
 
-                        System.out.println("Please enter the term you want to update: ");
-                        String t = sc.nextLine(); 
-                        System.out.println("Please enter the new information you want associated with the term: "); 
-                        String s = sc.nextLine(); 
-                        System.out.println("Please enter the Confidence Score of your information on a scale from 0.0(impossible) to 1.0(certain): ");
-                        String cs = sc.nextLine();
-
-
-
-                        break; 
-
-                    case 3:
-                        
                         System.out.println("Please enter the term you want to add to the knowledge base: ");
                         String key = sc.nextLine(); 
                         System.out.println("Please enter the new information you want associated with the term: "); 
@@ -104,7 +124,16 @@ public class GenericsKbBSTApp{
                         System.out.println("Please enter the Confidence Score of your information on a scale from 0.0(impossible) to 1.0(certain): ");
                         String confidenceScore = sc.nextLine();
                         
-                        gkbbst.searchTerm(key, sentence, confidenceScore); 
+                        gkbbst.updateTerm(key, sentence, confidenceScore); 
+
+                        break; 
+
+                    case 3:
+                        
+                        System.out.println("Enter the term to search: ");
+                        String term = sc.nextLine();
+
+                        gkbbst.searchByTerm(term); 
 
                         break; 
 

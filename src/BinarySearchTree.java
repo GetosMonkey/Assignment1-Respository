@@ -53,6 +53,21 @@ public class BinarySearchTree implements Tree{
             else {return searchByKey(node.getRightChild(), key); }
         }
 
+            // key & sentence 
+
+        public Node searchSentence(String key, String sentence){
+            return searchSentence(root, key, sentence);
+        }
+
+        public Node searchSentence(Node node, String key, String sentence){
+            
+            if (node == null || (key.equals(node.key) && node.sentence.contains(sentence))) {return node;}
+    
+            if (key.compareTo(node.key) < 0) {return searchSentence(node.getLeftChild(), key, sentence); } 
+            
+            else {return searchSentence(node.getRightChild(), key, sentence);}
+        } 
+        
         //Insertion
 
         public void insert(String key, String sentence, double CS){
@@ -77,7 +92,9 @@ public class BinarySearchTree implements Tree{
                 // If the Key already exists update is CS is higher than existing CS
                 if (confidenceScore > node.confidenceScore){
                     node.sentence = sentence; 
-                    node.confidenceScore = confidenceScore; 
+                    node.confidenceScore = confidenceScore;
+                    System.out.println("Statement successfully added :D !!!"); 
+                    //prevents duplicates
                 }
             }
 
