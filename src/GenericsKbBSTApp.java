@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class GenericsKbBSTApp{
 
     BinarySearchTree tree = new BinarySearchTree(); 
+    int x = 0; 
 
     public GenericsKbBSTApp(){
 
@@ -62,19 +63,37 @@ public class GenericsKbBSTApp{
         
     }
 
-
     // 3) Search for a statement by term 
 
     public void searchByTerm(String term){
 
-        
+        if (tree.isEmpty()){
+            return;
+        }
 
+        Node tuple = tree.searchByKey(term); 
+
+        if (tuple != null) {
+            System.out.println("Term found: " + tuple.key);
+            System.out.println("Confidence Score: " + tuple.confidenceScore);
+        } 
+        else{ System.out.println("The term was not found within the database");}
     }
-
 
     // 4) Search for a statement by term and sentence
     
     public void termAndSentence(String term, String sentence){
+
+        if (tree.isEmpty()){
+            return;
+        }
+
+        Node tuple = tree.searchSentence(term, sentence);
+
+        if (tuple != null) {
+            System.out.println("The statement was found with a Confidence Score of: " + tuple.confidenceScore);
+        } 
+        else{ System.out.println("The term was not found within the database");}
 
     }
 
@@ -138,10 +157,15 @@ public class GenericsKbBSTApp{
                         break; 
 
                     case 4:
+                        
+                        System.out.println("Enter the term to search: ");
+                        String k = sc.nextLine(); 
+                        System.out.println("Enter the statement to search for: "); 
+                        String s = sc.nextLine();
+
+                        gkbbst.termAndSentence(k, s);
+
                         break;
-                    
-                    case 5: 
-                        break; 
 
                 }}
                 System.out.print("Thanks for Using GenericsKb :)");
