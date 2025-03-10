@@ -35,7 +35,8 @@ Okay I only finished the array-based implementation partially due to a wholely n
 ### 10th March 2025
 
 **Resources used:** 
-1) 
+1) https://www.youtube.com/watch?v=zIX3zQP0khM&t=694s
+
 
 Today I'm working on the BST functionality of my application which will mostly be copied over from my array app but with the extra ability to add new statements to the knowledge base. My goal is to just get things working as a text-based application then if I finish all of that before tonight I'll assess how viable it is to be making a GUI for my code. If I reckon I have time or if we get an extension then I'll try to write a basic GUI otherwise I'll just add some better error catching or additional functionality to each of my programs and user-friendliness. I hope to write the report on Thursday after the test so that I can have the weekend to study for Maths and stats.
 

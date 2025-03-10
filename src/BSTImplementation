@@ -1,0 +1,149 @@
+// Maryam Abrahams
+// ABRMAR043
+// 10 March 2025 
+
+// Resource: https://www.youtube.com/watch?v=zIX3zQP0khM&t=694s
+// Credit : Geekific, Binary Search Trees
+
+package src; 
+
+@Data 
+
+class Node<T extends Comparable <T> > {
+
+    T data;
+    Node<T> left, right;
+    double confidenceScore; 
+    String key, sentence; 
+
+    //Constructor 
+    public Node(String key, String sentence, double confidenceScore){
+        this.key = key; 
+        this.sentence = sentence; 
+        this.confidenceScore = confidenceScore; 
+        this.left = this.right = null; 
+    }
+
+    public Node<T> getLeftChild(){
+        return left; 
+    }
+
+    public void setLeftChild(Node<T> newNode){
+        this.left = newNode; 
+    }
+
+    public getRightChild(){
+        return right; 
+    }
+
+    public Node<T> setRightChild(Node<T> newNode){
+        this.right = newNode; 
+    }
+
+    public T getData(){
+        return data; 
+    }
+
+}
+
+public interface Tree < T extends Comparable <T> >{ 
+
+    Tree<T> insert (T data); 
+    void delete (T data); 
+    void traverse()
+    T getMax(); 
+    T getMin(); 
+    boolean isEmpty(); 
+
+}
+
+public class BinarySearchTree<T extends Comparable<T>> implements Tree<T>{ 
+
+        private Node<T> root; 
+
+        //Constructor
+        public BinarySearchTree(){
+            this.root = null; 
+        }
+
+        @Override 
+        public boolean isEmpty(){ 
+            return root == null; 
+        }
+        
+        public void traverse(){ 
+            traverseInOrder(root); 
+        }
+
+        private void traverseInOrder(Node<T> node){ 
+            if (node != null){ 
+                traverseInOrder(node.getLeftChild()); 
+                System.out.println(node); 
+                traverseInOrder(node.getRightCild());
+            }
+        }
+
+        //Insertion and Deletion
+
+        
+        public Tree<T> insert(T data){ 
+            if(isEmpty()){
+                root = new Node<> (data);
+            } else {
+                insert(data, root); 
+            } return this; 
+        }
+
+        private void inser(T data, Node<T> node){
+            if(data.compareTo(node.getData())< 0){ 
+
+                if (node.getLeftChild() == null){ 
+
+                    Node<T> newNode = new Node<>(data); 
+                    node.setLeftChild(newNode);
+                } else {
+                    insert(data, node.getLeftChild());
+                }
+            } else if (data.compareTo(node.getData())>0){
+
+                if (node.getRightChild()==null){
+
+                    Node<T> newNode = new Node<>(data); 
+                    node.setRightChild(newNode); 
+                } else {
+                    insert(data, node.getRightChild()); 
+                }
+            } 
+        }
+
+        
+        public void delete (T data){
+            root = delete(data, root); 
+        }
+
+        private Node<T> delete (T data, Node<T> node){ 
+
+            if(node==null){
+                return null; 
+            }
+
+            if(data.compareTo(node.getData())<0){
+                node.setLeftChild(delete(data, node.getLeftChild())); 
+            } else if (data.compareTo(node.getData()) > 0){ 
+                node.setRightChild(delete(data, node.getRightChild())); 
+            } else {
+                //One Child or Leaf Node (no children) 
+                if (node.getLeftChild() == null){
+                    return node.getRightChild(); 
+                } else if (node.getRightChild()== null){
+                    return node.getLeftChild(); 
+                }
+                // Two Children
+                node.setData(getMax(node.getLeftChild())); 
+                node.setLeftChild(delete(node.getData(), node.getLeftChild())); 
+            }
+            return node; 
+        }
+
+        }
+    }
