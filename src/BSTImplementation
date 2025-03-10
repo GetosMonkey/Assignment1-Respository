@@ -9,10 +9,9 @@ package src;
 
 @Data 
 
-class Node<T extends Comparable <T> > {
+class Node {
 
-    T data;
-    Node<T> left, right;
+    Node left, right;
     double confidenceScore; 
     String key, sentence; 
 
@@ -24,126 +23,95 @@ class Node<T extends Comparable <T> > {
         this.left = this.right = null; 
     }
 
-    public Node<T> getLeftChild(){
+    public Node getLeftChild(){
         return left; 
     }
 
-    public void setLeftChild(Node<T> newNode){
+    public void setLeftChild(Node newNode){
         this.left = newNode; 
     }
 
-    public getRightChild(){
+    public Node getRightChild(){
         return right; 
     }
 
-    public Node<T> setRightChild(Node<T> newNode){
+    public void setRightChild(Node newNode){
         this.right = newNode; 
-    }
-
-    public T getData(){
-        return data; 
     }
 
 }
 
-public interface Tree < T extends Comparable <T> >{ 
+public interface Tree{ 
 
-    Tree<T> insert (T data); 
-    void delete (T data); 
-    void traverse()
-    T getMax(); 
-    T getMin(); 
+    void insert(String key, String sentence, double confidenceScore);
+    void traverse(); 
     boolean isEmpty(); 
 
 }
 
-public class BinarySearchTree<T extends Comparable<T>> implements Tree<T>{ 
+public class BinarySearchTree implements Tree{ 
 
-        private Node<T> root; 
+        private Node root; 
 
         //Constructor
         public BinarySearchTree(){
             this.root = null; 
         }
 
+        // If empty
         @Override 
         public boolean isEmpty(){ 
             return root == null; 
         }
         
+        // Don't need to get max or min 
+
+        // Traversal 
+
         public void traverse(){ 
             traverseInOrder(root); 
         }
 
-        private void traverseInOrder(Node<T> node){ 
+        public void traverseInOrder(Node node){ 
             if (node != null){ 
                 traverseInOrder(node.getLeftChild()); 
-                System.out.println(node); 
-                traverseInOrder(node.getRightCild());
+                System.out.println("key: " + node.key + ", sentence: " + node.sentence + ", CS: " + node.confidenceScore); 
+                traverseInOrder(node.getRightChild());
             }
         }
 
-        //Insertion and Deletion
+        //Insertion
 
-        
-        public Tree<T> insert(T data){ 
-            if(isEmpty()){
-                root = new Node<> (data);
+        public void insert(String key, String sentence, double CS){
+            root = insert(root, key, sentence, CS); 
+        }
+
+        public Node insert(Node node, String key, String sentence, double confidenceScore){
+
+            if (node == null){
+                return new Node(key, sentence, confidenceScore); 
+            }
+            if (key.compareTo(node.key)>0){
+
+                node.setLeftChild(insert(node.getLeftChild(), key, sentence, confidenceScore));
+ 
+            } else if (key.compareTo(node.key) < 0){
+
+                node.setRightChild(insert(node.getRightChild(), key, sentence, confidenceScore)); 
+            
             } else {
-                insert(data, root); 
-            } return this; 
-        }
 
-        private void inser(T data, Node<T> node){
-            if(data.compareTo(node.getData())< 0){ 
-
-                if (node.getLeftChild() == null){ 
-
-                    Node<T> newNode = new Node<>(data); 
-                    node.setLeftChild(newNode);
-                } else {
-                    insert(data, node.getLeftChild());
+                // If the Key already exists update is CS is higher than existing CS
+                if (confidenceScore > node.confidenceScore){
+                    node.sentence = sentence; 
+                    node.confidenceScore = confidenceScore; 
                 }
-            } else if (data.compareTo(node.getData())>0){
-
-                if (node.getRightChild()==null){
-
-                    Node<T> newNode = new Node<>(data); 
-                    node.setRightChild(newNode); 
-                } else {
-                    insert(data, node.getRightChild()); 
-                }
-            } 
-        }
-
-        
-        public void delete (T data){
-            root = delete(data, root); 
-        }
-
-        private Node<T> delete (T data, Node<T> node){ 
-
-            if(node==null){
-                return null; 
             }
 
-            if(data.compareTo(node.getData())<0){
-                node.setLeftChild(delete(data, node.getLeftChild())); 
-            } else if (data.compareTo(node.getData()) > 0){ 
-                node.setRightChild(delete(data, node.getRightChild())); 
-            } else {
-                //One Child or Leaf Node (no children) 
-                if (node.getLeftChild() == null){
-                    return node.getRightChild(); 
-                } else if (node.getRightChild()== null){
-                    return node.getLeftChild(); 
-                }
-                // Two Children
-                node.setData(getMax(node.getLeftChild())); 
-                node.setLeftChild(delete(node.getData(), node.getLeftChild())); 
-            }
             return node; 
         }
 
+
+        // Don't need Deletion
+
         }
-    }
