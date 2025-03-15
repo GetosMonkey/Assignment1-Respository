@@ -1,6 +1,19 @@
-// Maryam Abrahams
-// ABRMAR043
-// 5th March 2025
+/**
+ * The GenericsKbBSTApp class is responsible for managing a knowledge base using a 
+ * Binary Search Tree (BST). It provides functionality to load data from a file, 
+ * update entries, search for terms, and search for statements.
+ * 
+ * Features:
+ * - Load knowledge base from a file.
+ * - Add or update statements.
+ * - Search for statements by term or by both term and sentence.
+ * - Interactive user interface through console.
+ * 
+ * @author Maryam Abrahams
+ * @version 1.0
+ * @since 2025-03-05
+ */
+
 package src;
 import java.util.List;
 import java.util.Scanner;

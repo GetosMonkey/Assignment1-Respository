@@ -4,7 +4,7 @@ JAVA = java
 
 SRC_DIR = src
 BIN_DIR = bin
-
+DOC_DIR = doc
 
 SRC_FILES = $(wildcard $(SRC_DIR)/*.java)
 
@@ -15,7 +15,13 @@ all: $(CLASS_FILES)
 
 # Compilation
 $(BIN_DIR)/%.class: $(SRC_DIR)/%.java
-	$(JAVAC) -d $(BIN_DIR) $<
+	@mkdir -p $(BIN_DIR)
+	cd $(SRC_DIR) && $(JAVAC) -d ../$(BIN_DIR) $(notdir $<)
+
+# Generate Javadoc
+javadoc:
+	@mkdir -p $(DOC_DIR)
+	javadoc -d $(DOC_DIR) -sourcepath $(SRC_DIR) $(SRC_FILES)
 
 # Run GenericsKbBSTApp
 run-bst: all
@@ -27,4 +33,4 @@ run-array: all
 
 # Clean rule
 clean:
-	rm -rf $(BIN_DIR)/*
+	rm -rf $(BIN_DIR)/* $(DOC_DIR)/*

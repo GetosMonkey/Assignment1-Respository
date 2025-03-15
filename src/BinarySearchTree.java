@@ -1,9 +1,22 @@
-// Maryam Abrahams
-// ABRMAR043
-// 10 March 2025 
+/**
+ * The BinarySearchTree class implements a generic BST that stores 
+ * knowledge base entries. Each node in the tree contains a term, 
+ * an associated statement, and a confidence score.
+ * 
+ * Features:
+ * - Insert new terms into the tree.
+ * - Search for terms by key.
+ * - Search for a specific term and sentence.
+ * - Print tree
+ * 
+ * Resource: https://www.youtube.com/watch?v=zIX3zQP0khM&t=694s
+ * Credit : Geekific, Binary Search Trees
+ * 
+ * @author Maryam Abrahams
+ * @version 1.0
+ * @since 2025-03-05
+ */
 
-// Resource: https://www.youtube.com/watch?v=zIX3zQP0khM&t=694s
-// Credit : Geekific, Binary Search Trees
 
 package src;
 

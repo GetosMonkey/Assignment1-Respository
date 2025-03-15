@@ -1,6 +1,17 @@
-// Maryam Abrahams
-// ABRMAR043
-// 5th March 2025
+/**
+ * The Parsefile class is responsible for reading knowledge base data from a file 
+ * and storing it in a List of String arrays.
+ * 
+ * Features:
+ * - Reads data from a tab-separated text file.
+ * - Stores entries as an ArrayList of String arrays.
+ * - Provides access to the knowledge base for further processing.
+ * 
+ * @author Maryam Abrahams
+ * @version 1.0
+ * @since 2025-03-05
+ */
+
 package src;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

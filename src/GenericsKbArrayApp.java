@@ -1,6 +1,18 @@
-// Maryam Abrahams
-// ABRMAR043
-// 5th March 2025
+/**
+ * The GenericsKbArrayApp class manages a knowledge base using an array-based data 
+ * structure instead of a BST. It allows users to load, update, and search the 
+ * knowledge base interactively.
+ * 
+ * Features:
+ * - Load knowledge base from a file.
+ * - Add or update statements.
+ * - Search for statements by term or by both term and sentence.
+ * 
+ * @author Maryam Abrahams
+ * @version 1.0
+ * @since 2025-03-05
+ */
+
 package src;
 import java.util.List;
 import java.util.Scanner;
@@ -44,6 +56,15 @@ public class GenericsKbArrayApp{
             System.out.println("Please first load a knowledge base. \n");
             return; 
         }
+
+            double existingScore = Double.parseDouble(knowledgeBase[position][2]);
+            double newScore = Double.parseDouble(score);
+
+            if (newScore < existingScore) {
+            System.out.println("Failed to update: The new confidence score (" + newScore + 
+                           ") is lower than the existing score (" + existingScore + "). :( \n");
+            return;
+    }
 
         knowledgeBase[position][1] = sentence; 
         knowledgeBase[position][2] = score; 

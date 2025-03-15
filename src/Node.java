@@ -1,9 +1,18 @@
-// Maryam Abrahams
-// ABRMAR043
-// 10 March 2025 
-
-// Resource: https://www.youtube.com/watch?v=zIX3zQP0khM&t=694s
-// Credit : Geekific, Binary Search Trees
+/**
+ * The Node class represents a single entry in the Binary Search Tree. 
+ * It contains a key (term), a sentence, a confidence score, and references 
+ * to left and right child nodes.
+ * 
+ * Fields:
+ * - key: The term associated with the knowledge entry.
+ * - sentence: The statement linked to the term.
+ * - confidenceScore: A numeric value (0.0 to 1.0) representing reliability.
+ * - left, right: Pointers to left and right child nodes.
+ * 
+ * @author Maryam Abrahams
+ * @version 1.0
+ * @since 2025-03-05
+ */
 
 package src;  
 
