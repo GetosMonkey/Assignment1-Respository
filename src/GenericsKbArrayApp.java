@@ -93,10 +93,13 @@ public class GenericsKbArrayApp{
                 int choice = 0; 
                 Scanner sc = new Scanner(System.in);
                 GenericsKbArrayApp GKBAA = new GenericsKbArrayApp(); 
+
+                System.out.println("Welcome to GenericsKb :)");
     
             while (choice != 5) {
     
                 System.out.println("""
+
                         Choose an action from the menu:
                         1. Load a knowledge base from a file
                         2. Update a statement in the knowledge base

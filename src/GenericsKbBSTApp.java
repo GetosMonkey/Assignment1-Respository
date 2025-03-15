@@ -36,15 +36,9 @@ public class GenericsKbBSTApp{
             String sentence = i[1]; 
             double CS = Double.parseDouble(i[2]); 
 
-            //System.out.println("Inserting: " + key + ", " + sentence + ", " + CS); // Debug statement Test insertion
-
             tree.insert(key, sentence, CS); 
 
         }
-
-        System.out.println("\n");
-        System.out.println("Root after insertion: " + tree.root); // Debug Statement checking for root
-        tree.printTree(); //Debug Statement Test loading/updating
     }
 
     // 2) Update a Statement in the knowledge base 
@@ -71,9 +65,6 @@ public class GenericsKbBSTApp{
                     if (response.equals("y")){
                         tree.insert(key, sentence, CS);
 
-                        System.out.println("\n"); 
-                        tree.printTree(); //Debug Statement Test loading/updating
-
                     } else if (response.equals("n")){                  
                         return; 
                     } else { System.out.print("Please enter either 'y' or 'n': ");}
@@ -88,10 +79,6 @@ public class GenericsKbBSTApp{
 
             System.out.println("The term was found within the database. ");
             tree.insert(key, sentence, CS);
-
-            System.out.println("\n"); 
-            System.out.println("Root after insertion: " + tree.root); // Debug Statement checking for root
-            tree.printTree(); //Debug Statement Test loading/updating
         }
         
     }
@@ -99,6 +86,8 @@ public class GenericsKbBSTApp{
     // 3) Search for a statement by term 
 
     public void searchByTerm(String term){
+
+        System.out.print("\n");
 
         if (tree.isEmpty()){
             System.out.println("The database is empty. Please populate it first.");
@@ -109,6 +98,7 @@ public class GenericsKbBSTApp{
 
         if (tuple != null) {
             System.out.println("Term found: " + tuple.key);
+            System.out.println(tuple.sentence); 
             System.out.println("Confidence Score: " + tuple.confidenceScore);
         } 
         else{ System.out.println("The term was not found within the database");}
@@ -117,6 +107,8 @@ public class GenericsKbBSTApp{
     // 4) Search for a statement by term and sentence
     
     public void termAndSentence(String term, String sentence){
+
+        System.out.print("\n");
 
         if (tree.isEmpty()){
             System.out.println("The database is empty. Please populate it first");
@@ -139,11 +131,14 @@ public class GenericsKbBSTApp{
                 int choice = 0; 
                 Scanner sc = new Scanner(System.in);
                 GenericsKbBSTApp gkbbst = new GenericsKbBSTApp(); 
+            
+                System.out.println("Welcome to GenericsKb :)");
     
             while (choice != 5) {
                 
                 //updates if the confidence score is higher than an existing one 
                 System.out.println("""
+
                         Choose an action from the menu:
                         1. Load a knowledge base from a file
                         2. Add or update a statement to\\in the knowledge base
@@ -211,7 +206,8 @@ public class GenericsKbBSTApp{
                         break;
 
                 }}
-                System.out.print("Thanks for Using GenericsKb :)");
+
+                System.out.print("\nThanks for Using GenericsKb :)");
                 sc.close(); 
         }
 }

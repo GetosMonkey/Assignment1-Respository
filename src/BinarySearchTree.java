@@ -18,8 +18,7 @@ public class BinarySearchTree implements Tree{
 
         // If empty
         //@Override 
-        public boolean isEmpty(){ 
-            System.out.println("The root of your tree is null.");
+        public boolean isEmpty(){
             return root == null; 
         }
 
@@ -32,7 +31,6 @@ public class BinarySearchTree implements Tree{
         public void traverseInOrder(Node node){ 
             if (node != null){ 
                 traverseInOrder(node.getLeftChild()); 
-                //System.out.println("key: " + node.key + ", sentence: " + node.sentence + ", CS: " + node.confidenceScore); 
                 traverseInOrder(node.getRightChild());
             }
         }
@@ -45,13 +43,8 @@ public class BinarySearchTree implements Tree{
 
         public Node searchByKey(Node node, String key){
 
-            if (node == null || key.equals(node.key)) { 
-
-                System.out.println("Node found: " + (node != null ? node.key : "null")); // Debug statement check node empty
-
+            if (node == null || key.equals(node.key)) {
                 return node; }
-            
-                System.out.println("Current node key: " + node.key); // Debug statement check node
 
             if (key.compareTo(node.key) < 0) { return searchByKey(node.getLeftChild(), key); } 
             
@@ -126,7 +119,5 @@ public class BinarySearchTree implements Tree{
                 printTree(node.getRightChild());
             }
         }
-
-        // Don't need Deletion
 
         }
