@@ -24,7 +24,7 @@ public class WelcomeSign {
         Color cambridgeBlue = new Color(135, 186, 171);
 
         //creating and setting the frame
-        JFrame frame = new JFrame("Welcome to the Application");
+        JFrame frame = new JFrame("Hello friend :)");
         
         frame.setSize(400, 200);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
