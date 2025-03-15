@@ -75,7 +75,6 @@ public class Parsefile {
     public List<String[]> getDatabase() {
         return database;
     }
-
     
     public static void main(String[] args){
 

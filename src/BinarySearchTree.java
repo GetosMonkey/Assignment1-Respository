@@ -79,11 +79,11 @@ public class BinarySearchTree implements Tree{
             if (node == null){
                 return new Node(key, sentence, confidenceScore); 
             }
-            if (key.compareTo(node.key)>0){
+            if (key.compareTo(node.key) < 0){
 
                 node.setLeftChild(insert(node.getLeftChild(), key, sentence, confidenceScore));
  
-            } else if (key.compareTo(node.key) < 0){
+            } else if (key.compareTo(node.key) > 0){
 
                 node.setRightChild(insert(node.getRightChild(), key, sentence, confidenceScore)); 
             
@@ -100,7 +100,27 @@ public class BinarySearchTree implements Tree{
 
             return node; 
         }
+        
+        // Recursive PrintTree method to test if my Tree is correctly updating:
 
+        public void printTree() {
+            System.out.println("Tree Contents (In-order traversal):");
+            printTree(root);
+            System.out.println();
+        }
+        
+        private void printTree(Node node) {
+            if (node != null) {
+                // left subtree
+                printTree(node.getLeftChild());
+        
+                // Print the current
+                System.out.println("Key: " + node.key + ", Sentence: " + node.sentence + ", Confidence Score: " + node.confidenceScore);
+        
+                // right subtree
+                printTree(node.getRightChild());
+            }
+        }
 
         // Don't need Deletion
 

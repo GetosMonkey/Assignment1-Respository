@@ -43,3 +43,7 @@ Today I'm working on the BST functionality of my application which will mostly b
 ### 11th March 2025
 
 I did technically finish what I wanted to but its 12:50 now :')
+
+### 14th of March 2025 
+
+This week has been an incredibly rough one but today I'll be putting on the final touches for my project.

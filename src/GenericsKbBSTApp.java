@@ -9,14 +9,27 @@ public class GenericsKbBSTApp{
 
     BinarySearchTree tree = new BinarySearchTree(); 
     int x = 0; 
+    Parsefile file; 
 
     public GenericsKbBSTApp(){
 
     }
 
+    public void setFile(Parsefile path){
+        file = path; 
+    }
+    public String getTree(){
+        return tree.toString(); 
+    }
+
     // 1) Load knowledge base from file
 
     public void convertToTree(Parsefile path){ 
+
+        if (file == null){
+            System.out.println("Please first load a knowledge base. \n");
+            return; }
+
         List<String[]> list = path.getDatabase(); 
 
         //inserting into my tree 
@@ -25,14 +38,19 @@ public class GenericsKbBSTApp{
             String sentence = i[1]; 
             double CS = Double.parseDouble(i[2]); 
 
-            tree.insert(key, sentence, CS); 
-        }
-    }
+            //System.out.println("Inserting: " + key + ", " + sentence + ", " + CS); // Debug statement Test insertion
 
+            tree.insert(key, sentence, CS); 
+
+        }
+
+        System.out.println("\n"); 
+        tree.printTree(); //Debug Statement Test loading/updating
+    }
 
     // 2) Update a Statement in the knowledge base 
 
-    public void updateTerm(String key, String sentence, String cs){
+    public void updateTerm(String key, String sentence, String cs, Scanner sc){
 
         double CS = Double.parseDouble(cs); 
 
@@ -44,21 +62,36 @@ public class GenericsKbBSTApp{
         Node tuple = tree.searchByKey(key); 
 
         if ( tuple == null){
-            System.out.println("The term was not found within the database. "); 
+            System.out.println("The term was not found within the database. ");
+
                 //Combining add and update: 
                 System.out.println("Would you like to add the new information to the knowledge base? [y or \\n]: ");
-                    Scanner scan = new Scanner(System.in); 
-                    if (scan.nextLine().equals("y")){
+
+                    String response = sc.nextLine(); 
+
+                    if (response.equals("y")){
                         tree.insert(key, sentence, CS);
-                    } else if (scan.nextLine().equals("n")){
-                        scan.close(); 
+
+                        System.out.println("\n"); 
+                        tree.printTree(); //Debug Statement Test loading/updating
+
+                    } else if (response.equals("n")){                  
                         return; 
                     } else { System.out.print("Please enter either 'y' or 'n': ");}
-                    scan.close();
+                    
             return;
         }else{ 
+
+            // Return message if failed to update because of CS
+            if( CS <= tuple.confidenceScore){
+                System.out.println("The term was found within the datebase but not updated because the proposed information has a lower confidence score than that of the existing information associated with " + tuple.key + " (" + tuple.confidenceScore + ")");
+            }
+
             System.out.println("The term was found within the database. ");
             tree.insert(key, sentence, CS);
+
+            System.out.println("\n"); 
+            tree.printTree(); //Debug Statement Test loading/updating
         }
         
     }
@@ -66,6 +99,10 @@ public class GenericsKbBSTApp{
     // 3) Search for a statement by term 
 
     public void searchByTerm(String term){
+
+        if (file == null){
+            System.out.println("Please first load a knowledge base. \n");
+            return; }
 
         if (tree.isEmpty()){
             return;
@@ -83,6 +120,10 @@ public class GenericsKbBSTApp{
     // 4) Search for a statement by term and sentence
     
     public void termAndSentence(String term, String sentence){
+
+        if (file == null){
+            System.out.println("Please first load a knowledge base. \n");
+            return; }
 
         if (tree.isEmpty()){
             return;
@@ -128,6 +169,7 @@ public class GenericsKbBSTApp{
                         System.out.println("Enter file directory: "); // full file directory recquire (command: realpath filename.txt 
                         String filename = sc.nextLine(); 
                         Parsefile path = new Parsefile(filename);
+                        gkbbst.setFile(path); 
                         gkbbst.convertToTree(path);
                         
                         System.out.println("Knowledge base loaded successfully.\n");
@@ -142,13 +184,20 @@ public class GenericsKbBSTApp{
                         String sentence = sc.nextLine(); 
                         System.out.println("Please enter the Confidence Score of your information on a scale from 0.0(impossible) to 1.0(certain): ");
                         String confidenceScore = sc.nextLine();
-                        
-                        gkbbst.updateTerm(key, sentence, confidenceScore); 
+                            
+                            double score = Double.parseDouble(confidenceScore); 
+                            if( (score < 0.0) || (score > 1.0)){
+                                System.out.println("Please enter a valid Confidence Score for your information (0.0 - 1.0) ");
+                                confidenceScore = sc.nextLine();
+
+                            } else { gkbbst.updateTerm(key, sentence, confidenceScore, sc); }
 
                         break; 
 
                     case 3:
-                        
+
+                        gkbbst.getTree(); 
+
                         System.out.println("Enter the term to search: ");
                         String term = sc.nextLine();
 
