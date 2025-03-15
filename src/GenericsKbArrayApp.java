@@ -115,6 +115,7 @@ public class GenericsKbArrayApp{
                 Scanner sc = new Scanner(System.in);
                 GenericsKbArrayApp GKBAA = new GenericsKbArrayApp(); 
 
+                WelcomeSign welcome = new WelcomeSign(); 
                 System.out.println("Welcome to GenericsKb :)");
     
             while (choice != 5) {

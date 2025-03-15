@@ -144,7 +144,8 @@ public class GenericsKbBSTApp{
                 int choice = 0; 
                 Scanner sc = new Scanner(System.in);
                 GenericsKbBSTApp gkbbst = new GenericsKbBSTApp(); 
-            
+
+                WelcomeSign welcome = new WelcomeSign(); 
                 System.out.println("Welcome to GenericsKb :)");
     
             while (choice != 5) {
