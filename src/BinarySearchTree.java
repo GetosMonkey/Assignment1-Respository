@@ -9,7 +9,7 @@ package src;
 
 public class BinarySearchTree implements Tree{ 
 
-        private Node root; 
+        public Node root; 
 
         //Constructor
         public BinarySearchTree(){
@@ -17,12 +17,11 @@ public class BinarySearchTree implements Tree{
         }
 
         // If empty
-        @Override 
+        //@Override 
         public boolean isEmpty(){ 
+            System.out.println("The root of your tree is null.");
             return root == null; 
         }
-        
-        // Don't need to get max or min 
 
         // Traversal 
 
@@ -46,7 +45,13 @@ public class BinarySearchTree implements Tree{
 
         public Node searchByKey(Node node, String key){
 
-            if (node == null || key.equals(node.key)) { return node; }
+            if (node == null || key.equals(node.key)) { 
+
+                System.out.println("Node found: " + (node != null ? node.key : "null")); // Debug statement check node empty
+
+                return node; }
+            
+                System.out.println("Current node key: " + node.key); // Debug statement check node
 
             if (key.compareTo(node.key) < 0) { return searchByKey(node.getLeftChild(), key); } 
             

@@ -11,9 +11,7 @@ public class GenericsKbBSTApp{
     int x = 0; 
     Parsefile file; 
 
-    public GenericsKbBSTApp(){
-
-    }
+    public GenericsKbBSTApp(){}
 
     public void setFile(Parsefile path){
         file = path; 
@@ -44,7 +42,8 @@ public class GenericsKbBSTApp{
 
         }
 
-        System.out.println("\n"); 
+        System.out.println("\n");
+        System.out.println("Root after insertion: " + tree.root); // Debug Statement checking for root
         tree.printTree(); //Debug Statement Test loading/updating
     }
 
@@ -91,6 +90,7 @@ public class GenericsKbBSTApp{
             tree.insert(key, sentence, CS);
 
             System.out.println("\n"); 
+            System.out.println("Root after insertion: " + tree.root); // Debug Statement checking for root
             tree.printTree(); //Debug Statement Test loading/updating
         }
         
@@ -100,11 +100,8 @@ public class GenericsKbBSTApp{
 
     public void searchByTerm(String term){
 
-        if (file == null){
-            System.out.println("Please first load a knowledge base. \n");
-            return; }
-
         if (tree.isEmpty()){
+            System.out.println("The database is empty. Please populate it first.");
             return;
         }
 
@@ -121,11 +118,8 @@ public class GenericsKbBSTApp{
     
     public void termAndSentence(String term, String sentence){
 
-        if (file == null){
-            System.out.println("Please first load a knowledge base. \n");
-            return; }
-
         if (tree.isEmpty()){
+            System.out.println("The database is empty. Please populate it first");
             return;
         }
 
